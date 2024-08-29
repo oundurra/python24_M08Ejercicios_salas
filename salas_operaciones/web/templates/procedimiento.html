@@ -1,0 +1,12 @@
+{% include 'basehead.html' %}
+
+<body class="p-2">
+    {% include 'menu.html' %}
+    <h1>Agende una Sala</h1>
+    <form action="{% url 'agendar' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Grabar">
+    </form>
+    {% include 'base.html' %}
+</body>

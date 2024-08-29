@@ -21,11 +21,8 @@ from web.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",index, name="home"),
-    path("procedimientos/",procedimientos, name="procedimientos"),
-    path("agendar/",agendar, name="agendar"),
-
+    path("agendar/", add_procedimiento, name="agendar"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
-
-
+    path('del_procedimiento/<int:id>/', del_procedimiento, name='del_procedimiento'),
 ]
